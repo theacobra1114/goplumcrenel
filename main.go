@@ -1,6 +1,6 @@
 package main
 import ("fmt";"strings")
-const appTag = "conn-pool-5c1794"
+const appTag = "conn-pool-5dacf7"
 type Transformer interface{Transform(string) string; Name() string}
 type Upper struct{}
 func (u Upper) Transform(s string) string{return strings.ToUpper(s)}
